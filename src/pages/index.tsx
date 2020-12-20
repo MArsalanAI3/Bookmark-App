@@ -4,7 +4,7 @@ import { useQuery, useMutation, gql } from "@apollo/client";
 import { navigate, navigateTo } from "gatsby";
 import "./style.css";
 import DeleteIcon from '@material-ui/icons/Delete';
-import Icon from '@material-ui/core/Icon';
+import SendIcon from '@material-ui/icons/Send';
 import PlaylistAddIcon from "@material-ui/icons/PlaylistAdd"
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Paper from "@material-ui/core/Paper"
@@ -149,7 +149,7 @@ const Home = () => {
                       onClick={() => navigateTo(d.url)}
                       variant="contained"
                       color="primary"
-                      endIcon={<Icon>send</Icon>}
+                      endIcon={<SendIcon /> }
                     >
                       Visit
                     </Button>
