@@ -131,11 +131,11 @@ const Home = () => {
         {data &&
           data.bookmark.map((d: dataType) => {
             return (
-              <Grid item md={6} sm={8} xs={10} key={d.id}>
+              <Grid style={{ display: "flex", justifyContent: "space-between" }} key={d.id}>
                 <div className="dataList">
                   <h3>{d.name}</h3>
                   <br/>
-                  <a href={d.url}>{d.url}</a>
+                  <a style={{marginBottom:"12px"}} href={d.url}>{d.url}</a>
 
                   <div className="listBtn">
                     <Button
