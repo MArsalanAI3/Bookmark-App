@@ -136,7 +136,8 @@ const Home = () => {
                 <div  className="dataList">
                   <h3>{d.name}</h3>
                   <br/>
-                  <a style={{marginBottom:"12px"}} href={d.url}>{d.url}</a>
+                  <a href={d.url}>{d.url}</a>
+                  <br/>
 
                   <div className="listBtn">
                     <Button
@@ -147,6 +148,7 @@ const Home = () => {
                     >
                       Remove
                     </Button>
+
                     <Button
                       onClick={() => navigateTo(d.url)}
                       variant="contained"
