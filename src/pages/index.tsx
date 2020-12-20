@@ -3,6 +3,11 @@ import { Button, TextField, Grid } from "@material-ui/core";
 import { useQuery, useMutation, gql } from "@apollo/client";
 import { navigate, navigateTo } from "gatsby";
 import "./style.css";
+import DeleteIcon from '@material-ui/icons/Delete';
+import Icon from '@material-ui/core/Icon';
+import PlaylistAddIcon from "@material-ui/icons/PlaylistAdd"
+import CircularProgress from '@material-ui/core/CircularProgress';
+import Paper from "@material-ui/core/Paper"
 
 type dataType = {
   id: string;
@@ -68,13 +73,30 @@ const Home = () => {
   };
 
   const { loading, error, data } = useQuery(GET_BOOKMARK);
+  
+  if (loading) {
+    return (
+    <CircularProgress className="loader" variant="static"  />
+    )
+  }
+
+  if (error) {
+    console.log(error)
+  }
+  
+  
+  
   return (
-    <div className="main">
-      <h1>BOOKMARK APP</h1>
-      <div className="inputArea">
-        <Grid container spacing={3} alignItems="center" direction="column">
-          <Grid item md={6} sm={8} xs={10}>
+    <div >
+      <Paper className="paper" elevation={3} style={{ width: "500px", margin: " 70px auto", minHeight: "200px" }}>
+      <h1 className="head">BOOKMARK APP</h1>
+      
+          <form
+        style={{ margin: "10px" }}
+        >
+
             <TextField
+              style={{ margin: "10px 0px" }}
               id="filled-text1"
               label="Name"
               variant="outlined"
@@ -82,9 +104,8 @@ const Home = () => {
               onChange={(e) => setName(e.target.value)}
               fullWidth
             />
-          </Grid>
-          <Grid item md={6} sm={8} xs={10}>
             <TextField
+              style={{ margin: "10px 0px" }}
               id="filled-text2"
               label="URL"
               variant="outlined"
@@ -92,20 +113,20 @@ const Home = () => {
               onChange={(e) => setSiteURl(e.target.value)}
               fullWidth
             />
-          </Grid>
-          <Grid item md={6} sm={8} xs={10}>
             <Button
+              style={{ margin: "10px 0px" }}
               variant="contained"
-              color="secondary"
-              size="medium"
+              fullWidth
               onClick={add}
+              startIcon={<PlaylistAddIcon />}
+
             >
               ADD TO BOOKMARK
             </Button>
-          </Grid>
-        </Grid>
-      </div>
-      {console.log(data && data.bookmark)}
+            </form>
+            </Paper>
+
+      {/* {console.log(data && data.bookmark)} */}
       <Grid container spacing={1} direction="column" justify="center">
         {data &&
           data.bookmark.map((d: dataType) => {
@@ -119,6 +140,7 @@ const Home = () => {
                     <Button
                       onClick={() => remove(d.id)}
                       variant="contained"
+                      startIcon={<DeleteIcon />}
                       color="secondary"
                     >
                       Remove
@@ -126,7 +148,8 @@ const Home = () => {
                     <Button
                       onClick={() => navigateTo(d.url)}
                       variant="contained"
-                      color="secondary"
+                      color="primary"
+                      endIcon={<Icon>send</Icon>}
                     >
                       Visit
                     </Button>
