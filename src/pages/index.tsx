@@ -141,7 +141,7 @@ const Home = () => {
 
                   <div className="listBtn">
                     <Button
-                    style={{marginTop:"10"}}
+                      // style={{marginTop:"10"}}
                       onClick={() => remove(d.id)}
                       variant="contained"
                       startIcon={<DeleteIcon />}

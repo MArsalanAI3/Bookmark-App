@@ -21,7 +21,7 @@
 .inputArea,
 .dataList {
     background-color: #aeffd9;
-    margin: 20px;
+    margin: 10px;
     text-align: start;
     padding: 10px;
     border-radius: 10px;
@@ -41,6 +41,7 @@
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
+    margin-top: 10px;
 }
 
 .loader {
