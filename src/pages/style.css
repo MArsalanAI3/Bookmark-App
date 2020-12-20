@@ -20,19 +20,13 @@
 
 .inputArea,
 .dataList {
-    display: flex;
-    justify-content: center;
-    text-align: start;
     background-color: #aeffd9;
     margin: 10px;
+    text-align: start;
     padding: 10px;
 
 }
-.main {
-    width: 100vw;
-    text-align: center;
-    margin: 10px;
-}
+
 .paper{
     box-shadow: 10px 20px 30px 30px #888888 !important;
     border: 4px solid #493131;

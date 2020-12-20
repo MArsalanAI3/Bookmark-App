@@ -131,8 +131,7 @@ const Home = () => {
         {data &&
           data.bookmark.map((d: dataType) => {
             return (
-           <div className="main">
-           <Grid item md={6} sm={8} xs={10} key={d.id}>
+              <Grid item md={6} sm={8} xs={10} key={d.id}>
                 <div className="dataList">
                   <h3>{d.name}</h3>
                   <br/>
@@ -158,7 +157,6 @@ const Home = () => {
                   </div>
                 </div>
               </Grid>
-              </div>
             );
           })}
       </Grid>
