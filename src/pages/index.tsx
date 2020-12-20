@@ -131,8 +131,9 @@ const Home = () => {
         {data &&
           data.bookmark.map((d: dataType) => {
             return (
-              <Grid style={{ display: "flex", justifyContent: "space-between" }} key={d.id}>
-                <div className="dataList">
+              // <div style={{ display: "flex", justifyContent: "space-between" }}></div>
+              <Grid  key={d.id}>
+                <div  className="dataList">
                   <h3>{d.name}</h3>
                   <br/>
                   <a style={{marginBottom:"12px"}} href={d.url}>{d.url}</a>
