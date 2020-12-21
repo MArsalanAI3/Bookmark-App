@@ -88,8 +88,8 @@ const Home = () => {
   
   return (
     <div >
-      <Paper className="paper" elevation={3} style={{ width: "500px", margin: " 70px auto", minHeight: "200px" }}>
-      <h1 className="head">BOOKMARK APP</h1>
+      <Paper className="paper" elevation={4} style={{ width: "500px", margin: " 70px auto", minHeight: "200px" }}>
+      <h1 className="head">BOOKMARK-APP</h1>
       
           <form
         style={{ margin: "10px" }}
@@ -114,9 +114,8 @@ const Home = () => {
               fullWidth
             />
             <Button
-              style={{ margin: "10px 0px" }}
+              className="btn"
               variant="contained"
-              fullWidth
               onClick={add}
               startIcon={<PlaylistAddIcon />}
 
@@ -131,7 +130,6 @@ const Home = () => {
         {data &&
           data.bookmark.map((d: dataType) => {
             return (
-              // <div style={{ display: "flex", justifyContent: "space-between" }}></div>
               <Grid  key={d.id}>
                 <div  className="dataList">
                   <h3>{d.name}</h3>
@@ -141,7 +139,6 @@ const Home = () => {
 
                   <div className="listBtn">
                     <Button
-                      // style={{marginTop:"10"}}
                       onClick={() => remove(d.id)}
                       variant="contained"
                       startIcon={<DeleteIcon />}
