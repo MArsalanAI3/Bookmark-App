@@ -134,7 +134,7 @@ const Home = () => {
                 <div  className="dataList">
                   <h1>{d.name}</h1>
                   <br/>
-                  <a href={d.url} target='_blank'>{d.url}</a>
+                  <a style={{fontSize:"22px"}} href={d.url} target='_blank'>{d.url}</a>
                   <br/>
 
                   <div className="listBtn">
@@ -149,7 +149,6 @@ const Home = () => {
 
                     <Button
                       onClick={() => navigateTo(d.url) }
-                      target='_blank'
                       variant="contained"
                       color="primary"
                       endIcon={<SendIcon /> }
