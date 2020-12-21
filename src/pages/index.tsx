@@ -148,7 +148,8 @@ const Home = () => {
                     </Button>
 
                     <Button
-                      onClick={() => navigateTo(d.url)}
+                      onClick={() => navigateTo(d.url) }
+                      target='_blank'
                       variant="contained"
                       color="primary"
                       endIcon={<SendIcon /> }
