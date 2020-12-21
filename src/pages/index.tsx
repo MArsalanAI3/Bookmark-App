@@ -132,9 +132,9 @@ const Home = () => {
             return (
               <Grid  key={d.id}>
                 <div  className="dataList">
-                  <h3>{d.name}</h3>
+                  <h1>{d.name}</h1>
                   <br/>
-                  <a href={d.url}>{d.url}</a>
+                  <a href={d.url} target='_blank'>{d.url}</a>
                   <br/>
 
                   <div className="listBtn">
